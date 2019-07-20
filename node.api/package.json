@@ -2,11 +2,11 @@
   "name": "node.api",
   "version": "1.0.0",
   "description": "A sample api project with some routes",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"
   },
-  "author": "",
+  "author": "lcsl",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
