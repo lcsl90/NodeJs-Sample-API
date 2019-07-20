@@ -1,19 +1,20 @@
-const express       = require('express');
+var express       = require('express');
 var bodyParser = require("body-parser");
+//Import Routes
+var apiRoutes  = require('./api-routes/api-routes');
+var nodeRoutes = require('./routes/node_routes');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 //Init stuff
-const app = express();
-const port = 1337;
-
-//Import Routes
-const authRoute  = require('./api-routes/auth');
-const nodeRoutes = require('./routes/node_routes');
+var app = express();
+var port = 1337;
 
 //route mw
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-
-app.use('/api', authRoute);
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/api', apiRoutes);
 app.use(nodeRoutes);
 
 app.listen(port, () => console.log("We live, boyyyyys. Port: " + port));
