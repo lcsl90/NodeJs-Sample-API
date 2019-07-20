@@ -1,10 +1,9 @@
 var express       = require('express');
 var bodyParser = require("body-parser");
-//Import Routes
 var apiRoutes  = require('./api-routes/api-routes');
 var nodeRoutes = require('./routes/node_routes');
-const dotenv = require('dotenv');
 
+var dotenv = require('dotenv');
 dotenv.config();
 
 //Init stuff
